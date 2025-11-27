@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Password Strength & Leak Checker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Password Strength & Leak Checker</h1>
+      <p>Client-side entropy estimator and optional leak check (HIBP k-anonymity).</p>
+    </header>
+
+    <section class="card">
+      <label for="password">Enter password</label>
+      <input id="password" type="password" autocomplete="new-password" placeholder="Type a password" />
+      <div class="row">
+        <button id="toggle-visibility">Show</button>
+        <button id="check-leak">Check leak (HIBP)</button>
+        <label class="switch"><input id="enable-hibp" type="checkbox" checked /><span>Enable HIBP</span></label>
+      </div>
+
+      <div id="results" class="results">
+        <p><strong>Entropy:</strong> <span id="entropy">—</span> bits</p>
+        <p><strong>Strength:</strong> <span id="strength">—</span></p>
+        <p><strong>Leak status:</strong> <span id="leak">—</span></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Client-side only. Use strong, unique passwords and a password manager.</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
